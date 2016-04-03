@@ -89,9 +89,9 @@ for obj in dic.keys{
 
 /*************分支语句***********************/
 //if...else
-var n:Int = 2;
+var n2:Int = 2;
 var n1:Int = 3;
-if n>n1{
+if n2>n1{
     print("trye")
 }else{
     print("fause")
@@ -391,8 +391,49 @@ struct index{
     return index * multi
     }
 }
+//使用下标
+var stuc = index(multi:23)
+var va = stuc[3]
 
+//类的进一步使用-------------继承
+//定义基类
+class PersomOfstudent{
+    var number:Int
+    var boy:Int
+    func prin() -> String {
+        return "total \(number) students and boy are \(boy)"
+    }
+    
+    init() {
+        number = 10
+        boy = 10
+    }
+}
 
+var person = PersomOfstudent()
+person.prin()
+//定义子类
+class girstStudents:PersomOfstudent{
+    //2.2语法
+    //重写父类方法（还可以重写属性和下标）
+    override init() {
+        super.init()
+        number = 200
+        boy = 100
+    }
+    override func prin() -> String {
+        return "override class punc total \(number) students and boy are \(boy)"
+    }
+    //旧语法
+//    init() {
+//        super.init()
+//        number = 200
+//        boy = 100
+//    }
+}
+
+var girlS = girstStudents()
+girlS.prin()
 
 
 
