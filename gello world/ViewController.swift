@@ -6,6 +6,9 @@
 //  Copyright © 2016年 互动. All rights reserved.
 //
 
+
+/*************** MyPlayground中是自己在学习swift的时候做的东西 **************/
+
 import UIKit
 
 class ViewController: UIViewController {
