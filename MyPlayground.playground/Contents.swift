@@ -478,4 +478,47 @@ var myCla:my? = my(first: "yuan",second: "le")
 print(myCla!.fullName)
 myCla = nil//会调用deinit方法，（前提myCla是一个可选类型的）
 
+//扩展
+extension Double{
+    var km:Double{return self*1000.0}//其实这是个属性，只读
+    var mm:Double{return self/1000.0}
+}
+let mm = 20230.5.km
+let km = 2020.4.mm
+
+extension my{
+    func exte() -> Void {
+        print("extension")
+    }
+}
+
+var myCla1:my? = my(first: "yuan",second: "le")
+myCla1?.exte()
+
+//协议
+protocol prints{
+    func printInfo() -> String
+}
+
+class name:prints {
+    var name = ""
+    func printInfo() -> String {
+        return "name is \(name)"
+    }
+    
+}
+
+var nameClas = name();
+nameClas.name = "caicai";
+var ress:String? = nameClas.printInfo()
+print(ress)
+
+
+
+
+
+
+
+
+
 
