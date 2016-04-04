@@ -430,14 +430,52 @@ class girstStudents:PersomOfstudent{
 //        number = 200
 //        boy = 100
 //    }
+    
+    var indi = 40
 }
 
 var girlS = girstStudents()
 girlS.prin()
 
+class boy: girstStudents {
+    override init() {
+        super.init()
+        
+    }
+    override var indi: Int{//属性重写
+        get{
+            return super.indi
+        }
+        set{
+            min(newValue, 40)
+        }
+    }
+}
 
+class my: girstStudents {
+    
+    override var indi: Int{//属性重写
+        get{
+            return super.indi
+        }
+        set{
+            min(newValue, 40)
+        }
+    }
+    
+    var fullName:String = ""
+    init(first name:String,second names:String ) {
+        fullName = "\(name) \n \(names)"
+    }
+    
+    //析构方法
+    deinit{
+        print("call deinit")
+    }
+}
 
-
-
+var myCla:my? = my(first: "yuan",second: "le")
+print(myCla!.fullName)
+myCla = nil//会调用deinit方法，（前提myCla是一个可选类型的）
 
 
